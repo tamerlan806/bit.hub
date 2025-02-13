@@ -1,7 +1,7 @@
 local CrosshairSettings = {
     Enabled = true,
     Size = 10,
-    Thickness = 2,
+    Thickness = 3,
     Color = Color3.fromRGB(255, 255, 255)
 }
 
