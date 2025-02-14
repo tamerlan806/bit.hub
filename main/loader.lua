@@ -292,4 +292,3 @@ checkKeyButton.MouseButton1Click:Connect(function()
         errorMessage.Text = ""
     end
 end)
-і
