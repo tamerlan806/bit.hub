@@ -1,8 +1,8 @@
 local CrosshairSettings = {
     Enabled = true,
-    Size = 10,
+    Size = 6, 
     Thickness = 3,
-    Color = Color3.fromRGB(255, 255, 255)
+    Color = Color3.fromRGB(148, 87, 82)
 }
 
 local CrosshairLines = {}
@@ -19,20 +19,21 @@ local function UpdateCrosshair()
     local camera = workspace.CurrentCamera
     local center = Vector2.new(camera.ViewportSize.X / 2, camera.ViewportSize.Y / 2)
     local size = CrosshairSettings.Size
+    local gap = 2 
 
     if CrosshairSettings.Enabled then
-        CrosshairLines[1].From = Vector2.new(center.X - size, center.Y)
-        CrosshairLines[1].To = Vector2.new(center.X - (size / 2), center.Y)
-        
-        CrosshairLines[2].From = Vector2.new(center.X + size, center.Y)
-        CrosshairLines[2].To = Vector2.new(center.X + (size / 2), center.Y)
-        
-        CrosshairLines[3].From = Vector2.new(center.X, center.Y - size)
-        CrosshairLines[3].To = Vector2.new(center.X, center.Y - (size / 2))
-        
-        CrosshairLines[4].From = Vector2.new(center.X, center.Y + size)
-        CrosshairLines[4].To = Vector2.new(center.X, center.Y + (size / 2))
-        
+        CrosshairLines[1].From = Vector2.new(center.X - (size + gap), center.Y)
+        CrosshairLines[1].To = Vector2.new(center.X - gap, center.Y)
+
+        CrosshairLines[2].From = Vector2.new(center.X + (size + gap), center.Y)
+        CrosshairLines[2].To = Vector2.new(center.X + gap, center.Y)
+
+        CrosshairLines[3].From = Vector2.new(center.X, center.Y - (size + gap))
+        CrosshairLines[3].To = Vector2.new(center.X, center.Y - gap)
+
+        CrosshairLines[4].From = Vector2.new(center.X, center.Y + (size + gap))
+        CrosshairLines[4].To = Vector2.new(center.X, center.Y + gap)
+
         for _, line in pairs(CrosshairLines) do
             line.Visible = true
         end
