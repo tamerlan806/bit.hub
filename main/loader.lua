@@ -278,7 +278,7 @@ checkKeyButton.MouseButton1Click:Connect(function()
         sendLog(userInputKey)
 
         local success, errorMessage = pcall(function()
-            loadstring(game:HttpGet("", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/tamerlan806/bit.hub/refs/heads/main/main/main.lua", true))()
         end)
 
         if not success then
